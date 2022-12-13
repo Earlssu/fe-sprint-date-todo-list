@@ -6,7 +6,6 @@ export default function Nav() {
   const [navClicked, setNavClicked] = useState(false);
 
   const toggleHamburger = () => {
-    console.log("hello!");
     setNavClicked(!navClicked);
   };
 
@@ -21,7 +20,7 @@ export default function Nav() {
         <h1 className="Nav-Title">
           <span>데이</span>투두리스트
         </h1>
-        <ul className="Nav-List">
+        <ul className={navClicked ? "Nav-List Toggle" : "Nav-List"}>
           <Link to="/" className="Nav-Item">
             처음으로
           </Link>
