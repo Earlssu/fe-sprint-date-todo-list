@@ -45,12 +45,13 @@ function MainForm({ todoList, setTodoList }) {
     const newData = {
       option: dateOption,
       todo: dateDesc,
+      date: startDate,
     };
 
     if (dateOption === "분류") {
       alert("올바른 분류를 골라주세요");
-    } else if (dateDesc === "") {
-      alert("데이트 항목을 추가해주세요");
+    } else if (dateDesc === "" || dateDesc === null) {
+      alert("데이트 내용을 추가해주세요");
     } else {
       setTodoList([newData, ...todoList]);
     }
