@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
+import "./Nav.css";
 
 export default function Nav() {
   const [navClicked, setNavClicked] = useState(false);

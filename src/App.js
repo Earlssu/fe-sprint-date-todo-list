@@ -5,28 +5,9 @@ import Main from "./Components/Main";
 import { useState } from "react";
 import MyCourse from "./Components/MyCourse";
 import RandomCourse from "./Components/RandomCourse";
+import { dummyData } from "./Data/SampleData.js";
 
 function App() {
-  const dummyData = [
-    {
-      option: "활동",
-      todo: "신촌 로빈훗",
-    },
-    {
-      option: "식사",
-      todo: "홍대 닭꼬얌",
-    },
-    {
-      option: "카페",
-      todo: "차차 티클럽",
-    },
-    {
-      option: "디저트",
-      todo: "Molly's",
-    },
-  ];
-
-  const [dateOption, setDateOption] = useState("분류");
   const [todoList, setTodoList] = useState(dummyData);
   return (
     <div>
@@ -35,14 +16,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={
-              <Main
-                todoList={todoList}
-                setTodoList={setTodoList}
-                dateOption={dateOption}
-                setDateOption={setDateOption}
-              />
-            }
+            element={<Main todoList={todoList} setTodoList={setTodoList} />}
           ></Route>
           <Route
             path="/mycourse"
