@@ -13,7 +13,14 @@ export default function Main({ todoList, setTodoList }) {
       <ul className="Main-List">
         {todoList.map((a, idx) => {
           return (
-            <ListItem option={a.option} todo={a.todo} date={a.date} key={idx} />
+            <ListItem
+              option={a.option}
+              todo={a.todo}
+              date={a.date}
+              todoList={todoList}
+              setTodoList={setTodoList}
+              key={idx}
+            />
           );
         })}
       </ul>
@@ -38,7 +45,6 @@ function MainForm({ todoList, setTodoList }) {
 
   const handleDateChange = (event) => {
     setStartDate(event.target.value);
-    console.log(startDate);
   };
 
   const handleSubmit = (event) => {
@@ -89,7 +95,10 @@ function MainForm({ todoList, setTodoList }) {
 }
 
 // 이후 해당 컴포넌트를 활용해 더미 데이터를 기반으로 랜더할 예정입니다.
-function ListItem({ option, todo, date }) {
+function ListItem({ option, todo, date, todoList, setTodoList }) {
+  const deleteDate = () => {
+    setTodoList(todoList.filter((a) => a.option !== option));
+  };
   return (
     <li className="List-Item">
       <div className="Item-Dropdown">{option}</div>
@@ -101,7 +110,7 @@ function ListItem({ option, todo, date }) {
         <button>
           <GrEdit />
         </button>
-        <button>
+        <button onClick={deleteDate}>
           <GoTrashcan />
         </button>
         <button>

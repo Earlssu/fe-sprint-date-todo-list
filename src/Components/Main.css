@@ -93,3 +93,13 @@ input {
   display: flex;
   justify-content: space-evenly;
 }
+
+.Item-Buttons button {
+  font-size: 25px;
+  border: none;
+  background-color: transparent;
+}
+
+.Item-Buttons button:hover {
+  cursor: pointer;
+}
