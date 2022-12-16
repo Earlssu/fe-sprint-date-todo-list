@@ -7,7 +7,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 
 export default function Main({ todoList, setTodoList }) {
-  // console.log(todoList);
   const [isEditOn, setIsEditOn] = useState(false);
   const [dateId, setDateId] = useState(null);
 

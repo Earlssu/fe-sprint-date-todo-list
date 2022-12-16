@@ -3,9 +3,8 @@ import "./App.css";
 import Nav from "./Components/Nav";
 import Main from "./Components/Main";
 import { useEffect, useState } from "react";
-import MyCourse from "./Components/MyCourse";
-import RandomCourse from "./Components/RandomCourse";
 import axios from "axios";
+import AboutMe from "./Components/AboutMe";
 
 function App() {
   const [todoList, setTodoList] = useState(null);
@@ -26,6 +25,7 @@ function App() {
               path="/"
               element={<Main todoList={todoList} setTodoList={setTodoList} />}
             ></Route>
+            <Route path="/aboutme" element={<AboutMe />}></Route>
           </Routes>
         )}
       </Router>

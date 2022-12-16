@@ -1,0 +1,49 @@
+.About-Info {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 30px;
+  color: sienna;
+}
+
+.About-Detail {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.About-Info img {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+}
+
+.Made-With {
+  width: 500px;
+  text-align: center;
+  font-size: 35px;
+  margin: 0 auto;
+}
+
+.React {
+  color: #4b56d2;
+}
+
+.Styled-Component {
+  color: palevioletred;
+}
+
+.HTML {
+  color: orangered;
+}
+
+.CSS {
+  color: blue;
+}
+
+.JS {
+  color: orange;
+}
