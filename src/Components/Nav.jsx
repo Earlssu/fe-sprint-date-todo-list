@@ -25,12 +25,6 @@ export default function Nav() {
           <Link to="/" className="Nav-Item">
             처음으로
           </Link>
-          <Link to="/mycourse" className="Nav-Item">
-            나의 데이트 코스
-          </Link>
-          <Link to="/randomcourse" className="Nav-Item">
-            랜덤 코스 추천
-          </Link>
           <Link to="/aboutme" className="Nav-Item">
             누가 만들었나요?
           </Link>

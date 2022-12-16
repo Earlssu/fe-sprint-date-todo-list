@@ -2,28 +2,32 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Nav from "./Components/Nav";
 import Main from "./Components/Main";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MyCourse from "./Components/MyCourse";
 import RandomCourse from "./Components/RandomCourse";
-import { dummyData } from "./Data/SampleData.js";
+import axios from "axios";
 
 function App() {
-  const [todoList, setTodoList] = useState(dummyData);
+  const [todoList, setTodoList] = useState(null);
+
+  useEffect(() => {
+    axios.get("http://localhost:4000/data").then((res) => {
+      setTodoList(res.data);
+    });
+  }, []);
+
   return (
     <div>
       <Router>
         <Nav />
-        <Routes>
-          <Route
-            path="/"
-            element={<Main todoList={todoList} setTodoList={setTodoList} />}
-          ></Route>
-          <Route
-            path="/mycourse"
-            element={<MyCourse todoList={todoList} />}
-          ></Route>
-          <Route path="/randomcourse" element={<RandomCourse />}></Route>
-        </Routes>
+        {todoList && (
+          <Routes>
+            <Route
+              path="/"
+              element={<Main todoList={todoList} setTodoList={setTodoList} />}
+            ></Route>
+          </Routes>
+        )}
       </Router>
     </div>
   );
